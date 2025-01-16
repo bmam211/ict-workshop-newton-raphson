@@ -20,9 +20,9 @@ def add_ring_bus_from_to(grid_data, n_ring_num, is_mesh=False):
     
 
 def create_grid_topo():
-    n_rings = 2
+    n_rings = 20 # 2
     n_ring_num = 10
-    n_meshes = 1
+    n_meshes = 12 # 2
     is_mesh_list = [True] * n_meshes + [False] * (n_rings-n_meshes)
     grid_data = {"id_end": 10, "mv_bus": 0, "line_from": [], "line_to": [], "buses": []}
     for ring, is_mesh in zip(range(n_rings), is_mesh_list):
