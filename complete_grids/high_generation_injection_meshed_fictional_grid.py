@@ -50,17 +50,16 @@ def create_pp_grid():
 
     pp.create_buses(net, nr_buses=len(grid_data["buses"]), vn_kv=10.0, index=grid_data["buses"])
     pp.create_lines(net, from_buses=grid_data["line_from"], to_buses=grid_data["line_to"], length_km=[10.0] * len(grid_data["line_from"]), std_type="NAYY 4x150 SE")
-    pp.create_sgens(net, buses=grid_data["buses"], p_mw=[1] * len(grid_data["buses"]))
-    # pp.create_sgen(net, bus=1, p_mw=200.0)
+    pp.create_sgens(net, buses=grid_data["buses"], p_mw=[2] * len(grid_data["buses"]))
     return net
 
 net = create_pp_grid()
-# try:
-#     pp.runpp(net, algorithm="nr", init_vm_pu=0.5)  # wrong initial value, parametrize init_vm_pu
-# except LoadflowNotConverged as e:
-#     print("Wrong initial value")
-#     print(e)
+for inits in ["auto", 0.5, 1.0, 1.5, 2.0, 2.5]:
+    try:
+        pp.runpp(net, algorithm="nr", init_vm_pu=inits)  # wrong initial value, parametrize init_vm_pu
+        print(f"succeed with init_vm_pu={inits}")
+        print(max(net.res_bus["vm_pu"]))
+    except LoadflowNotConverged as e:
+        print(f"Wrong initial value for init_vm_pu={inits}")
+        print(e)
 
-pp.runpp(net, algorithm="nr", init="auto")  # correct initial value, parametrize init_vm_pu
-print("Correct initial value")
-print(net.res_bus)
