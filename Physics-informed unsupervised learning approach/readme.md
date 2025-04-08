@@ -1,4 +1,4 @@
-Welcome to the physics-informed unsupervised learning approach
+Welcome to the physics-informed unsupervised learning approach (authored by Shengyuan Yan, TU/e)
 
 To reproduce the results in our paper/technical report, follow the steps below.
 
@@ -28,3 +28,9 @@ assign value 1 to one of the three options while assigning 0 to all other option
 7, At last, run the script "TestResultPlot.py", the script will produce a line plot for "Test_sample_N-R_iterations.npy" as the png image file "Iterations_N-R_convergence_testset.png".
 
 ![示例图片](Iterations_N-R_convergence_testset.png)
+
+
+## License
+
+This subproject is licensed under the MIT License.  
+© 2025 Shengyuan Yan, TU/e. See the [LICENSE](./LICENSE) file for details.
