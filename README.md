@@ -4,6 +4,7 @@ Experimental repo for Newton Raphson initial value problem
 # Our pre-print paper for this research: "Data driven approach towards more efficient Newton-Raphson power flow calculation for distribution grids"
 1. DOI: https://doi.org/10.48550/arXiv.2504.11650
 2. Reference (cited as):
+
    [1] S. Yan, F. Vazinram, Z. Kaseb, L. Spoor, J. Stiasny, B. Mamudi, A. H. Ardakani, U. Orji, P. P. Vergara, Y. Xiang, and J. Guo, “Data driven approach towards more efficient Newton-Raphson power flow calculation for distribution grids,” arXiv preprint arXiv:2504.11650, 2025.
 
 ## Getting Started
